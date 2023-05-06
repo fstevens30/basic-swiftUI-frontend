@@ -13,6 +13,13 @@ struct ContentView: View {
         ZStack {
             LinearGradient(colors: [.blue, .white], startPoint: .topLeading, endPoint: .bottomTrailing)
                 .edgesIgnoringSafeArea(.all)
+            VStack {
+                Text("Christchurch, NZ")
+                    .font(.system(size:32, weight: .medium))
+                    .foregroundColor(.white)
+                    .padding()
+                Spacer()
+            }
         }
     }
 }
