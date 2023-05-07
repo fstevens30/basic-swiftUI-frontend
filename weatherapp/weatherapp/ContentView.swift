@@ -33,16 +33,31 @@ struct ContentView: View {
                 }
                 Spacer()
                 
-                VStack{
-                    
-                    HStack {
-                        WeatherDayView(dayOfWeek: "SUN", imageName: "cloud.drizzle.fill", dailyHigh: 18)
-                        WeatherDayView(dayOfWeek: "MON", imageName: "cloud.heavyrain.fill", dailyHigh: 14)
-                        WeatherDayView(dayOfWeek: "TUE", imageName: "cloud.sun.rain.fill", dailyHigh: 19)
-                        WeatherDayView(dayOfWeek: "WED", imageName: "wind", dailyHigh: 28)
-                        WeatherDayView(dayOfWeek: "THU", imageName: "sun.max.fill", dailyHigh: 31)
-                    }
-                }
+                Rectangle()
+                    .fill(.blue.opacity(0.2))
+                    .frame(width: 300, height: 200)
+                    .cornerRadius(10)
+                    .overlay(
+                        VStack {
+                            Text("5-Day Forecast")
+                                .foregroundColor(.white)
+                                .padding(.top)
+                            Divider()
+                                .padding(10)
+                                .foregroundColor(.white)
+                            HStack {
+                                WeatherDayView(dayOfWeek: "SUN", imageName: "cloud.drizzle.fill", dailyHigh: 18)
+                                WeatherDayView(dayOfWeek: "MON", imageName: "cloud.heavyrain.fill", dailyHigh: 14)
+                                WeatherDayView(dayOfWeek: "TUE", imageName: "cloud.sun.rain.fill", dailyHigh: 19)
+                                WeatherDayView(dayOfWeek: "WED", imageName: "wind", dailyHigh: 28)
+                                WeatherDayView(dayOfWeek: "THU", imageName: "sun.max.fill", dailyHigh: 31)
+                            }
+                            Spacer()
+                        }
+                            .padding(10)
+                            .foregroundColor(.white)
+                        )
+                
                 
                 Spacer()
             }
